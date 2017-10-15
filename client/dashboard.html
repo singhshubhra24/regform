@@ -1,0 +1,113 @@
+<Template name="customerinfo">
+  <h1 align="center"> CUSTOMER INFORMATION</h1>
+  <hr>
+  <div class="container">
+
+      <form class="well form-horizontal"   id="contact_form">
+  <fieldset>
+
+  <!-- Form Name -->
+  <legend>CUSTOMER INFORMATION!</legend>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label">NAME</label>
+      <div class="col-md-4 selectContainer">
+      <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <select name="firstname" class="form-control selectpicker"   id="ddlname">
+        <option value=" " >Please select below</option>
+        {{#each one}}
+         <option value="{{firstname}}">{{firstname}}</option>
+         {{/each}}
+           </select>
+       </div>
+     </div>
+   </div>
+
+     <div class="form-group">
+       <label class="col-md-4 control-label">EMAIL </label>
+       <div class="col-md-4 inputGroupContainer">
+       <div class="input-group">
+       <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+       <input  class="form-control" value="{{sdfsdf.email}}" id="email">
+       </div>
+     </div>
+      </div>
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">MOBILE</label>
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+          <input  class="form-control" value="{{sdfsdf.phone}}" id="mobile">
+          </div>
+        </div>
+         </div>
+
+         <div class="form-group">
+           <label class="col-md-4 control-label">BILL AMOUNT</label>
+             <div class="col-md-4 inputGroupContainer">
+             <div class="input-group">
+                 <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+           <input name="billamount" class="form-control"  type="number" id="textBill">
+             </div>
+           </div>
+            </div>
+
+           <div class="form-group">
+             <label class="col-md-4 control-label">GST</label>
+               <div class="col-md-4 inputGroupContainer">
+               <div class="input-group">
+                   <span class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></span>
+             <input name="gst" class="form-control" value="{{returnddd.gst}}"  type="number" id="gst">
+               </div>
+             </div>
+              </div>
+
+             <div class="form-group">
+               <label class="col-md-4 control-label">TOTAL</label>
+                 <div class="col-md-4 inputGroupContainer">
+                 <div class="input-group">
+                 <span class="input-group-addon"><i class="glyphicon glyphicon-plus-sign"></i></span>
+                 <input name="total" value="{{returnddd.amount}}" class="form-control" type="number" id="total">
+                 </div>
+               </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label"></label>
+                  <div class="col-md-4">
+                    <button type="submit" class="btn btn-warning" id="savebtn">Save <span class="glyphicon glyphicon-save"></span></button>
+                  </div>
+              </div>
+
+</fieldset>
+</form>
+</div>
+<h2 class="p1"><b>CUSTOMER INFO</b></h2>
+<table class="table" border="2" >
+    <thead>
+      <tr>
+        <th>FIRSTNAME</th>
+        <th>EMAIL</th>
+        <th>PHONE</th>
+        <th>BILLAMOUNT</th>
+        <th>GST</th>
+        <th>TOTAL_AMOUNT</th>
+
+      </tr>
+    </thead>
+    <tbody>
+{{#each info}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{email}}</td>
+          <td>{{phone}}</td>
+              <td>{{textBill}}</td>
+                    <td>{{gst}}</td>
+                      <td>{{total}}</td>
+      </tr>
+{{/each}}
+    </tbody>
+  </table>
+
+</Template>
